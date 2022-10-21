@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Calculator</title>
+  <style>
+    @font-face {
+      font-family: 'Digital';
+      src: url('DS-DIGIT.TTF') format('truetype');
+    }
+
+    .calculator-container {
+      width: 400px;
+      background-color: black;
+      padding: 20px;
+      border-radius: 10px;
+      display: block;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .btn {
+      height: 50px;
+      width: 80px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: white;
+      border-radius: 10px;
+      border: 3px solid gray;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+      box-shadow: 0px 3px 5px white;
+      transition: 0.5s;
+    }
+
+    .bg-tomato {
+      background-color: tomato;
+      color: white;
+      border: 2px solid white;
+      border: 3px solid;
+    }
+
+    .input-screen {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 20px;
+      font-size: 50px;
+      background-color: lightgreen;
+      font-family: "Technology";
+      border: solid;
+      border-radius: 10px;
+    }
+
+    .mybtn {
+      width: 70px;
+      height: 30px;
+      background-color: black;
+    }
+
+    .brand {
+      color: white;
+      font-weight: bold;
+    }
+
+  </style>
+
+  <script>
+    function buttonpress(buttonvalue) {
+      console.log(buttonvalue)
+      let caltxt = document.querySelector(".input-screen").value + buttonvalue + "";
+      document.querySelector(".input-screen").value = caltxt;
+    }
+
+    function calculate() {
+      caltxt = document.querySelector(".input-screen").value
+      document.querySelector(".input-screen").value = eval(caltxt);
+    }
+
+    function dlt() {
+      document.querySelector(".input-screen").value = "";
+    }
+  </script>
+</head>
+
+<body>
+  <h1> &nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp calculator </h1>
+
+  <div class="calculator-container">
+    <span class="brand">CASIO</span>
+    <div class="row">
+      <input type="text" id="screen" class="mybtn" />
+    </div>
+
+    <div class="row">
+      <input type="text" id="input" placeholder="0" class="input-screen" />
+    </div>
+    <div class="row">
+      <button class="btn">π</button>
+      <button class="btn">cos()</button>
+      <button class="btn">sin()</button>
+      <button class="btn">log()</button>
+      <button class="btn bg-tomato">OFF</button>
+    </div>
+
+    <div class="row">
+      <button class="btn" onclick="buttonpress(7)">7</button>
+      <button class="btn" onclick="buttonpress(8)">8</button>
+      <button class="btn" onclick="buttonpress(9)">9</button>
+      <button class="btn bg-tomato">DEL</button>
+      <button class="btn bg-tomato" onclick="dlt()" >AC</button>
+    </div>
+
+    <div class="row">
+      <button class="btn" onclick="buttonpress(4)">4</button>
+      <button class="btn" onclick="buttonpress(5)">5</button>
+      <button class="btn" onclick="buttonpress(6)">6</button>
+      <button class="btn" onclick="buttonpress('*')">X</button>
+      <button class="btn" onclick="buttonpress('/')">÷</button>
+    </div>
+
+    <div class="row">
+      <button class="btn" onclick="buttonpress(1)">1</button>
+      <button class="btn" onclick="buttonpress(2)">2</button>
+      <button class="btn" onclick="buttonpress(3)">3</button>
+      <button class="btn" onclick="buttonpress('+')">+</button>
+      <button class="btn" onclick="buttonpress('-')">-</button>
+    </div>
+
+    <div class="row">
+      <button class="btn" onclick="buttonpress(0)">0</button>
+      <button class="btn" onclick="buttonpress('.')">.</button>
+      <button class="btn">√()</button>
+      <button class="btn">ANS</button>
+      <button class="btn" onclick="calculate()" >=</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
